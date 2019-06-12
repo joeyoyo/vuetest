@@ -1,3 +1,6 @@
+//该组件主要用于维护个人信息，例如可导入于app.vue中，这样就不会一大串代码，难以维护。
+//通过provide 与inject去注入引用。
+
 export default {
 
     name: 'app',

@@ -29,6 +29,7 @@
                 default: false
             }
         },
+        inheritAttrs: false, //禁用继承关系，例如父组件的id
         data(){
             return{
                 val:'你好',

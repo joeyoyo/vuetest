@@ -1,6 +1,6 @@
 <template>
     <div id="A">
-        <Button disabled class="btn-sumit">1</Button>
+        <Button disabled class="btn-sumit" id="1111">1</Button>
         <Button size="large" @on-click="handleclick2" ref="BUTTON">
             <i-icon slot="icon" type="checkmark"></i-icon>
             hello
@@ -43,7 +43,7 @@
             }
 
         },
-        mounted() {
+        mounted: function () {
             // 对元素或组件的引用
             const btn = this.$refs.BUTTON;
             window.alert(btn.title);
@@ -52,7 +52,10 @@
                 console.log(data);
             })
         },
-        provide() {    //通过 provide / inject通信，向下所有的组件都可以拿到
+        provide() {
+            //通过 provide / inject通信，向下所有的组件都可以拿到，缺点不是可响应的。
+            //优点：可以通过把app,vue作为最外层的组件，然后每个页面都可以拿到app.vue的数据，做到类似vueX的效果。
+            //但某个子页面需要修改资料时，即时请求，通知，再次修改。
             return {
                 app: this
             }
